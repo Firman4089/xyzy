@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link-sosmed</title>
+    <style>
+     .volume-icon {
+            width: 30px;
+            height: 30px;
+            cursor: none;
+         margin: 5px;
+     }
+       .container {
+              justify-content: center;
+              align-items: center;
+       }
+:root {
+    --bg-color: black;
+    --second-bg-color: #080808;
+    --text-color: white;
+    --main-color: aqua;
+}
+html{
+    overflow-x: hiden;
+}
+.text-animation{
+    font-size: 1.1rem;
+    font-weight: 600;    
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "Firman";
+    color: var(--main-color);
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 30s steps(15) infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes typing{
+    10%,
+    15%,
+    20%,
+    25%,
+    30%,
+    35%,
+    40%,
+    45%,
+    50%,
+    55%,
+    60%,
+    65%,
+    70%,
+    75%,
+    80%,
+    85%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    80%,
+    85%{
+        width: calc(100% + 5px)
+    }
+}
+  body {
+    background-image: url('Wallpaper.jpeg');  
+    background-size: cover;
+    background-position: center; 
+    margin: 0;
+    height: 100vh;
+      background-repeat: no-repeat ;
+  }
+  .profil {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 0 5px 0 white;
+  }
+   p {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(54,40,133,1) 44%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .up {
+    font-family: sans-serif;
+    margin-top: -2rem;
+    margin: 1rem;
+    box-shadow: 0 0 5px 0 white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(30 30 30 / 20%);
+    background-filter: blur(10px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 10px;
+    color: white;
+    height: 19rem;
+  }
+    a img {
+    background-color: rgba(30 30 30 / 20%);
+    background-filter: blur(10px);
+    box-shadow: 0 0 5px 0 rgba(30 30 30);
+    border-radius: 50px;
+    margin: 5px;
+    justify-content: flex;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    cursor: none;
+  }
+  img:hover {
+    background: rgba(30 30 30 / 10%);
+    cursor: none;
+  }
+  .playgrid {
+    background-color: rgba(30 30 30 / 20%);
+    background-filter: blur(10px);
+    box-shadow: 0 0 5px 0 white;
+    border-radius: 10px;
+    padding: 5rem;
+    margin: 1rem;
+  }
+    img{
+      width: 200em;
+      height: 200px;
+      border-radius: 10px;
+    }
+    .container{
+      text-align: center;
+      justify-content: center;
+    }
+    a {
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+     <img src="hening1.svg" alt="Volume On" class="volume-icon" id="volumeIcon">
+
+    <!-- Elemen audio -->
+    <audio id="audioPlayer" loop>
+        <source src="lagu.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+  <div class="u">
+         <div class="container">
+        
+    <img src="foto11.jpeg" class="profil">
+      <h3 class="text-animation">
+       I'am a <span></span>
+       </h3>
+    <p></p>
+  
+    <a href="https://tiktok.com/@frx5.z"><img src="tiktok.svg" class="tiktok"></a>
+    <a href="https://www.youtube.com/channel/UCg05j8SAr7dKbLwe3ZVnrVA"><img src="youtube.svg" class="youtube"></a>
+    <a href="https://www.instagram.com/firman_6477?igsh=YzljYTk1ODg3Zg=="><img src="instagram.svg" class="instagram"></a>  
+  </div>
+    <script>
+        var audio = document.getElementById('audioPlayer');
+        var icon = document.getElementById('volumeIcon');
+
+        // Event listener untuk gambar volume
+        icon.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play(); // Memutar lagu
+                icon.src = "volume1.svg"; // Mengubah gambar ke volume off
+            } else {
+                audio.pause(); // Menghentikan lagu
+                icon.src = "hening1.svg"; // Mengubah gambar ke volume on
+            }
+        });
+    </script>
+</body>
+</html>
